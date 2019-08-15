@@ -25,7 +25,7 @@
     position: relative;
     width: 400px;
     max-width: 70%;
-    height: 110px;
+    height: max-content;
     text-align: right;
 }
 

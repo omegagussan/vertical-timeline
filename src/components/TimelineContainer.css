@@ -12,5 +12,5 @@
     position: absolute;
     left: calc(50% - 2px);
     width: 4px;
-    height: 1000%;
+    height: calc(100% + 110px);
 }
