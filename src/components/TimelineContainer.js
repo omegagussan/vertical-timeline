@@ -7,7 +7,7 @@ class TimelineContainer extends React.Component{
         const sortable_data = this.props.data.map((item) => {
             return ({
                     ...item,
-                    date: Date.parse(item.date)
+                    date: new Date(item.date)
                 }
             );
             }
