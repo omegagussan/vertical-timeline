@@ -29,9 +29,9 @@ class TimelineContainer extends React.Component{
         });
         console.log(augmented_data);
         const Timeline = () =>
-            this.props.data.length > 0 && (
+            augmented_data.length > 0 && (
                 <div className="timeline-container">
-                    {this.props.data.map((data, idx) => (
+                    {augmented_data.map((data, idx) => (
                         <TimelineItem data={data} key={idx} />
                     ))}
                 </div>
