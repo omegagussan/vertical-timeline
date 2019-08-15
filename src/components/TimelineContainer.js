@@ -16,17 +16,18 @@ class TimelineContainer extends React.Component{
             (a,b) => (a.date < b.date) ? 1 : ((b.date > a.date) ? -1 : 0)
         ).reverse();
         const timespan = sorted_data[0].date - sorted_data[sorted_data.length-1].date;
-        const heights = []
+        const heights = [];
         for (let i = 0; i < sorted_data.length -1; i++){
             let diff = sorted_data[i+1].date - sorted_data[i].date;
             let rel_diff = Math.abs(diff/timespan);
             heights.push(rel_diff);
         }
-        const augmented_data = sorted_data.map((e, i) => {
+        let augmented_data = sorted_data.map((e, i) => {
             return ({...e,
                 height: heights[i]
             })
         });
+        augmented_data[augmented_data.length-1].height = 0;
         console.log(augmented_data);
         const Timeline = () =>
             augmented_data.length > 0 && (
@@ -41,6 +42,5 @@ class TimelineContainer extends React.Component{
 
 
 }
-
 
 export default TimelineContainer;
